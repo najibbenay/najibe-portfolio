@@ -312,6 +312,7 @@ function setupProjectGalleries() {
   const image = document.getElementById("lightboxImage");
   const caption = document.getElementById("lightboxCaption");
   const index = document.getElementById("lightboxIndex");
+  const scroller = document.getElementById("lightboxScroll");
 
   let slides = [];
   let current = 0;
@@ -324,6 +325,9 @@ function setupProjectGalleries() {
     image.alt = slide.alt;
     caption.textContent = slide.caption;
     index.textContent = `${current + 1} / ${slides.length}`;
+
+    // Each screenshot starts from the top of the page
+    if (scroller) scroller.scrollTop = 0;
   }
 
   galleries.forEach(gallery => {
@@ -353,6 +357,7 @@ function setupProjectGalleries() {
         next.src = thumb.dataset.src;
 
         count.textContent = `${position + 1} / ${thumbs.length}`;
+        thumb.scrollIntoView({ block: "nearest", inline: "nearest" });
 
         thumbs.forEach(other => {
           const selected = other === thumb;

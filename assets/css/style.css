@@ -897,8 +897,17 @@ svg {
 
 .gallery-thumbs {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-auto-flow: column;
+  grid-auto-columns: calc((100% - 4 * 6px) / 5);
   gap: 6px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: thin;
+}
+
+.gallery-thumb {
+  scroll-snap-align: start;
 }
 
 .gallery-thumb {
@@ -949,13 +958,19 @@ svg {
   margin: 0;
 }
 
-.lightbox-figure img {
-  display: block;
-  width: 100%;
+/* Long screenshots (full pages) scroll inside the lightbox */
+.lightbox-scroll {
   max-height: 82vh;
-  object-fit: contain;
+  overflow-y: auto;
   border-radius: 12px;
   background: var(--deep);
+  overscroll-behavior: contain;
+}
+
+.lightbox-scroll img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 .lightbox-figure figcaption {
