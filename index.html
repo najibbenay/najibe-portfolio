@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" dir="ltr">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <meta name="description"
-    content="Portfolio de Najibe Benay, développeur Full Stack à Tanger : projets, compétences et expérience.">
+    content="Portfolio de Najibe Benay, développeur Full Stack à Tanger : projets, compétences et parcours.">
 
   <meta name="referrer"
     content="strict-origin-when-cross-origin">
@@ -27,6 +27,7 @@
   <link rel="stylesheet" href="assets/css/responsive.css">
 
   <!-- JAVASCRIPT -->
+  <script src="assets/js/i18n.js" defer></script>
   <script src="assets/js/main.js" defer></script>
 </head>
 
@@ -35,44 +36,37 @@
   <!-- ========== NAVBAR ========== -->
 
   <header class="site-header">
+    <nav class="shell nav-shell" aria-label="Navigation principale">
 
-    <nav class="container-fluid nav-shell"
-      aria-label="Navigation principale">
-
-      <a class="brand" href="#home"
-        aria-label="Najibe Benay, accueil">
-        NB<span>.</span>
+      <a class="brand" href="#home" aria-label="Najibe Benay">
+        <span class="brand-mark" aria-hidden="true"></span>NB
       </a>
 
-      <button class="menu-toggle"
-        id="menuToggle"
-        type="button"
-        aria-label="Ouvrir le menu"
-        aria-controls="navLinks"
-        aria-expanded="false">
-
+      <button class="menu-toggle" id="menuToggle" type="button"
+        aria-label="Ouvrir le menu" aria-controls="navLinks" aria-expanded="false">
         <span></span>
         <span></span>
         <span></span>
-
       </button>
 
       <div class="nav-links" id="navLinks">
-
-        <a href="#home">Accueil</a>
-        <a href="#projects">Projets</a>
-        <a href="#about">À propos</a>
-        <a href="#skills">Compétences</a>
-        <a href="#experience">Expérience</a>
-        <a href="#education">Diplômes</a>
-        <a href="#certifications">Certifications</a>
-
+        <a href="#home" data-i18n="nav.home">Accueil</a>
+        <a href="#about" data-i18n="nav.about">À propos</a>
+        <a href="#skills" data-i18n="nav.skills">Compétences</a>
+        <a href="#projects" data-i18n="nav.projects">Projets</a>
+        <a href="#journey" data-i18n="nav.journey">Parcours</a>
+        <a href="#certifications" data-i18n="nav.certs">Certifications</a>
+        <a class="nav-link-contact" href="#contact" data-i18n="nav.contactLink">Contact</a>
       </div>
 
-      <a class="btn-pill btn-dark-custom nav-contact"
-        href="#contact">
-        Contact
-        <span aria-hidden="true">↗</span>
+      <div class="lang-switch" role="group" aria-label="Langue / Language / اللغة">
+        <button type="button" data-lang="fr" aria-pressed="true">FR</button>
+        <button type="button" data-lang="en" aria-pressed="false">EN</button>
+        <button type="button" data-lang="ar" aria-pressed="false" lang="ar">AR</button>
+      </div>
+
+      <a class="btn btn-accent nav-contact" href="#contact" data-i18n="nav.contact">
+        Me contacter <span aria-hidden="true">→</span>
       </a>
 
     </nav>
@@ -82,835 +76,140 @@
   <main>
 
     <!-- =================================
-         PART 1 - HOME / HERO
+         HERO
     ================================= -->
 
-    <section class="hero"
-      id="home"
-      aria-labelledby="homeTitle">
+    <section class="hero" id="home" aria-labelledby="homeTitle">
+      <div class="shell hero-grid">
 
-      <div class="container-fluid">
+        <div class="hero-content">
 
-        <div class="row align-items-center g-5">
+          <span class="availability">
+            <span class="status-dot" aria-hidden="true"></span>
+            <span data-i18n="hero.status">Ouvert aux opportunités · Tanger</span>
+          </span>
 
-          <div class="col-12 col-lg-7">
+          <h1 class="hero-title" id="homeTitle" data-i18n="hero.title">
+            Développeur Full Stack.<br>
+            Des applications web<br>
+            <span>claires et utiles.</span>
+          </h1>
 
-            <span class="availability">
-              <span class="status-dot"
-                aria-hidden="true"></span>
-              Ouvert aux opportunités
-            </span>
-
-            <p class="eyebrow">
-              PORTFOLIO / 2026
-            </p>
-
-            <h1 class="hero-title" id="homeTitle">
-              NAJIBE<br>
-              BENAY<span>.</span>
-            </h1>
-
-            <h2 class="hero-subtitle">
-              Développeur
-              <span>Full Stack</span>
-            </h2>
-
-            <p class="body-copy hero-description">
-              Passionné par le développement web
-              et les nouvelles technologies,
-              je conçois des applications modernes,
-              responsives et centrées sur
-              l'expérience utilisateur.
-            </p>
-
-            <div class="hero-actions">
-
-              <a class="btn-pill btn-dark-custom"
-                href="#projects">
-                Voir mes projets ↗
-              </a>
-
-              <a class="btn-pill btn-light-custom"
-                href="#contact">
-                Me contacter ↗
-              </a>
-
-            </div>
-
-            <div class="hero-social">
-
-              <span>RETROUVEZ-MOI SUR</span>
-
-              <a href="https://github.com/najibbenay"
-                target="_blank"
-                rel="noopener noreferrer">
-                GitHub ↗
-              </a>
-
-              <a
-                href="https://www.linkedin.com/in/najibe-benay-a7a401437/"
-                target="_blank"
-                rel="noopener noreferrer">
-                LinkedIn ↗
-              </a>
-
-            </div>
-
-          </div>
-
-
-          <!-- PHOTO -->
-
-          <div class="col-12 col-lg-5">
-
-            <div class="hero-visual">
-
-              <div class="photo-background"
-                aria-hidden="true"></div>
-
-              <div class="photo-frame">
-
-                <img
-                  class="profile-photo"
-                  src="assets/images/profile.jpg"
-                  alt="Portrait de Najibe Benay"
-                  width="1144"
-                  height="1536"
-                  fetchpriority="high">
-
-              </div>
-
-              <div class="photo-note">
-
-                <span aria-hidden="true">✳</span>
-
-                <div>
-                  <strong>Full Stack Developer</strong>
-                  <small>Tanger, Maroc</small>
-                </div>
-
-              </div>
-
-              <p class="photo-decoration">
-                Let's build something great!
-              </p>
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-
-
-    <!-- =================================
-         PART 2 - PROJECTS
-    ================================= -->
-
-    <section class="section section-white"
-      id="projects"
-      aria-labelledby="projectsTitle">
-
-      <div class="container-fluid">
-
-        <div class="section-heading">
-
-          <p class="section-label">
-            01 / PROJETS
+          <p class="hero-description" data-i18n="hero.desc">
+            Je conçois des sites et des applications web avec React,
+            Node.js et PostgreSQL : interfaces responsives, API REST
+            et tableaux de bord sécurisés.
           </p>
 
-          <h2 class="section-title"
-            id="projectsTitle">
-            MES <span>PROJETS.</span>
-          </h2>
-
-          <p class="body-copy">
-            Une sélection de mes réalisations
-            en développement web.
-          </p>
-
-        </div>
-
-
-        <article class="project-row row align-items-center g-5">
-
-          <div class="col-12 col-lg-5">
-
-            <p class="eyebrow">
-              PROJET ACADÉMIQUE / 2026
-            </p>
-
-            <h3 class="project-title">
-              Plateforme de gestion
-              d'une auto-école.
-            </h3>
-
-            <p class="body-copy">
-              Conception d'un site web responsive
-              pour gérer les élèves, moniteurs,
-              véhicules, inscriptions et
-              rendez-vous, avec un espace
-              d'administration.
-            </p>
-
-            <div class="tag-list">
-
-              <span>Élèves</span>
-              <span>Moniteurs</span>
-              <span>Véhicules</span>
-              <span>Rendez-vous</span>
-              <span>Administration</span>
-
-            </div>
-
-            <a
-              class="btn-pill btn-dark-custom"
-              href="https://github.com/najibbenay"
-              target="_blank"
-              rel="noopener noreferrer">
-
-              Voir mon GitHub ↗
-
+          <div class="hero-actions">
+            <a class="btn btn-accent" href="#projects" data-i18n="btn.projects">
+              Voir mes projets <span aria-hidden="true">→</span>
             </a>
-
+            <a class="btn btn-ghost" href="assets/docs/CV-Najibe-Benay.pdf"
+              download="CV-Najibe-Benay.pdf" type="application/pdf" data-i18n="btn.cv">
+              Télécharger mon CV <span aria-hidden="true">↓</span>
+            </a>
           </div>
 
-
-          <!-- PROJECT PREVIEW -->
-
-          <div class="col-12 col-lg-7">
-
-            <div class="project-preview"
-              role="img"
-              aria-label="Maquette illustrative d'un tableau de bord d'auto-école">
-
-              <div class="mock-browser">
-
-                <div class="mock-top">
-
-                  <span class="mock-dots">
-                    ● ● ●
-                  </span>
-
-                  <span>
-                    AUTO-ÉCOLE / CONCEPT
-                  </span>
-
-                </div>
-
-
-                <div class="mock-body">
-
-                  <div class="mock-sidebar">
-
-                    <strong>AutoÉcole.</strong>
-
-                    <span class="selected">
-                      Dashboard
-                    </span>
-
-                    <span>Élèves</span>
-                    <span>Moniteurs</span>
-                    <span>Véhicules</span>
-                    <span>Rendez-vous</span>
-
-                  </div>
-
-
-                  <div class="mock-main">
-
-                    <h4>Tableau de bord</h4>
-
-                    <div class="mock-stats">
-
-                      <div>
-                        <small>Élèves</small>
-                        <b>—</b>
-                      </div>
-
-                      <div>
-                        <small>Moniteurs</small>
-                        <b>—</b>
-                      </div>
-
-                      <div>
-                        <small>Véhicules</small>
-                        <b>—</b>
-                      </div>
-
-                    </div>
-
-                    <div class="mock-chart">
-
-                      <i></i>
-                      <i></i>
-                      <i></i>
-                      <i></i>
-                      <i></i>
-                      <i></i>
-                      <i></i>
-
-                    </div>
-
-                  </div>
-
-                </div>
-
-              </div>
-
-            </div>
-
-            
-
-          </div>
-
-        </article>
-
-      </div>
-    </section>
-
-
-    <!-- =================================
-         PART 2 - ABOUT ME
-    ================================= -->
-
-    <section class="section"
-      id="about"
-      aria-labelledby="aboutTitle">
-
-      <div class="container-fluid">
-
-        <div class="row g-5">
-
-          <div class="col-12 col-lg-4">
-
-            <p class="section-label">
-              02 / À PROPOS
-            </p>
-
-            <h2 class="section-title"
-              id="aboutTitle">
-
-              QUI SUIS-<br>
-              <span>JE ?</span>
-
-            </h2>
-
-            <p class="body-copy">
-              Curieux, motivé et passionné
-              par le développement web.
-            </p>
-
-          </div>
-
-
-          <div class="col-12 col-lg-8">
-
-            <h3 class="about-intro">
-              Je suis
-              <span>Najibe Benay</span>,
-              développeur Full Stack diplômé
-              en Développement Digital.
-            </h3>
-
-            <p class="body-copy">
-              Titulaire du Diplôme de Technicien
-              Spécialisé en Développement Digital,
-              option Web Full Stack,
-              obtenu à l'ISTA Tinghir en 2026.
-            </p>
-
-            <p class="body-copy">
-              Lors de mon stage à la Commune
-              de Kelaat M'Gouna, j'ai participé
-              aux tâches informatiques et au
-              traitement de données et
-              documents numériques.
-            </p>
-
-
-            <div class="row g-3 mt-2">
-
-              <div class="col-12 col-sm-6">
-
-                <div class="info-card">
-
-                  <small>FORMATION</small>
-
-                  <h4>Développement Digital</h4>
-
-                  <p>ISTA Tinghir — 2026</p>
-
-                </div>
-
-              </div>
-
-              <div class="col-12 col-sm-6">
-
-                <div class="info-card">
-
-                  <small>LOCALISATION</small>
-
-                  <h4>Tanger, Maroc</h4>
-
-                  <p>Ouvert aux opportunités</p>
-
-                </div>
-
-              </div>
-
-            </div>
-
-
-            <div class="objective">
-
-              <small>MON OBJECTIF</small>
-
-              <p>
-                Mettre en pratique mes compétences,
-                renforcer mon expérience
-                professionnelle et contribuer
-                à la réalisation de projets
-                web modernes.
-              </p>
-
-            </div>
-
+          <p class="hero-note" data-i18n="hero.note">Diplômé ISTA Tinghir 2026 · Basé à Tanger</p>
+
+          <ul class="hero-features">
+            <li>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+              <span data-i18n="feat.front">Front-end<br><small>React · Tailwind</small></span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5"/></svg>
+              <span data-i18n="feat.back">Back-end<br><small>Node · Express</small></span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6v12c0 1.7 3.6 3 8 3s8-1.3 8-3V6M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg>
+              <span data-i18n="feat.db">Base de données<br><small>PostgreSQL</small></span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.4 8-8 9-4.6-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>
+              <span data-i18n="feat.sec">Sécurité<br><small>Authentification JWT</small></span>
+            </li>
+          </ul>
+
+          <div class="hero-social">
+            <a href="https://github.com/najibbenay" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+            <a href="https://www.linkedin.com/in/najibe-benay-a7a401437/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
           </div>
 
         </div>
 
-      </div>
-    </section>
 
+        <div class="hero-visual">
+          <img class="profile-photo" src="assets/images/profile-hero.jpg"
+            alt="Portrait de Najibe Benay" width="1200" height="1500" fetchpriority="high">
 
-    <!-- =================================
-         PART 3 - SKILLS
-    ================================= -->
-
-    <section class="section section-white"
-      id="skills"
-      aria-labelledby="skillsTitle">
-
-      <div class="container-fluid">
-
-        <div class="section-heading">
-
-          <p class="section-label">
-            03 / COMPÉTENCES
-          </p>
-
-          <h2 class="section-title"
-            id="skillsTitle">
-            MON <span>TOOLKIT.</span>
-          </h2>
-
-          <p class="body-copy">
-            Les technologies et outils que
-            j'utilise en développement web.
-          </p>
-
-        </div>
-
-
-        <div class="row g-4">
-
-          <!-- FRONT-END -->
-
-          <div class="col-12 col-md-6 col-xl-3">
-
-            <article class="skill-card">
-
-              <span class="skill-index">
-                01 / FRONT-END
-              </span>
-
-              <h3>Front-End</h3>
-
-              <p>Interfaces utilisateur</p>
-
-              <div class="tech-grid">
-
-                <div class="tech">
-                  <img
-                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/html5/html5-original.svg"
-                    alt="" loading="lazy">
-                  <span>HTML5</span>
-                </div>
-
-                <div class="tech">
-                  <img
-                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/css3/css3-original.svg"
-                    alt="" loading="lazy">
-                  <span>CSS3</span>
-                </div>
-
-                <div class="tech">
-                  <img
-                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/javascript/javascript-original.svg"
-                    alt="" loading="lazy">
-                  <span>JavaScript</span>
-                </div>
-
-                <div class="tech">
-                  <img
-                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/react/react-original.svg"
-                    alt="" loading="lazy">
-                  <span>React.js</span>
-                </div>
-
-                <div class="tech">
-                  <img
-                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/bootstrap/bootstrap-original.svg"
-                    alt="" loading="lazy">
-                  <span>Bootstrap</span>
-                </div>
-
-              </div>
-
-            </article>
-          </div>
-
-
-          <!-- BACK-END -->
-
-          <div class="col-12 col-md-6 col-xl-3">
-
-            <article class="skill-card">
-
-              <span class="skill-index">
-                02 / BACK-END
-              </span>
-
-              <h3>Back-End</h3>
-
-              <p>Logique et API</p>
-
-              <div class="tech-grid">
-
-                <div class="tech">
-                  <img
-                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/php/php-original.svg"
-                    alt="" loading="lazy">
-                  <span>PHP</span>
-                </div>
-
-                <div class="tech">
-                  <img
-                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/laravel/laravel-original.svg"
-                    alt="" loading="lazy">
-                  <span>Laravel</span>
-                </div>
-
-                <div class="tech">
-                  <img
-                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/nodejs/nodejs-original.svg"
-                    alt="" loading="lazy">
-                  <span>Node.js</span>
-                </div>
-
-                <div class="tech">
-
-                  <span class="api-logo">API</span>
-
-                  <span>REST API</span>
-
-                </div>
-
-              </div>
-
-            </article>
-          </div>
-
-
-          <!-- DATABASES -->
-
-          <div class="col-12 col-md-6 col-xl-3">
-
-            <article class="skill-card">
-
-              <span class="skill-index">
-                03 / DATABASES
-              </span>
-
-              <h3>Databases</h3>
-
-              <p>Gestion des données</p>
-
-              <div class="tech-grid">
-
-                <div class="tech">
-                  <img
-                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/mysql/mysql-original.svg"
-                    alt="" loading="lazy">
-                  <span>MySQL</span>
-                </div>
-
-                <div class="tech">
-                  <img
-                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/mongodb/mongodb-original.svg"
-                    alt="" loading="lazy">
-                  <span>MongoDB</span>
-                </div>
-
-              </div>
-
-            </article>
-          </div>
-
-
-          <!-- TOOLS -->
-
-          <div class="col-12 col-md-6 col-xl-3">
-
-            <article class="skill-card">
-
-              <span class="skill-index">
-                04 / TOOLS
-              </span>
-
-              <h3>Tools &amp; DevOps</h3>
-
-              <p>Environnement de travail</p>
-
-              <div class="tech-grid">
-
-                <div class="tech">
-                  <img
-                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/git/git-original.svg"
-                    alt="" loading="lazy">
-                  <span>Git</span>
-                </div>
-
-                <div class="tech">
-                  <img
-                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/github/github-original.svg"
-                    alt="" loading="lazy">
-                  <span>GitHub</span>
-                </div>
-
-                <div class="tech">
-                  <img
-                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/docker/docker-original.svg"
-                    alt="" loading="lazy">
-                  <span>Docker</span>
-                </div>
-
-                <div class="tech">
-                  <img
-                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/vscode/vscode-original.svg"
-                    alt="" loading="lazy">
-                  <span>VS Code</span>
-                </div>
-
-              </div>
-
-            </article>
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-
-
-    <!-- =================================
-         PART 4 - EXPERIENCE
-    ================================= -->
-
-    <section class="section"
-      id="experience"
-      aria-labelledby="experienceTitle">
-
-      <div class="container-fluid">
-
-        <div class="section-heading">
-
-          <p class="section-label">
-            04 / EXPÉRIENCE
-          </p>
-
-          <h2 class="section-title"
-            id="experienceTitle">
-            MON <span>EXPÉRIENCE.</span>
-          </h2>
-
-        </div>
-
-
-        <article class="experience-grid">
-
-          <div>
-
-            <strong class="big-year">
-              2026
-            </strong>
-
-            <p class="eyebrow">
-              AVRIL — MAI
-            </p>
-
-            <span class="availability">
-              STAGE PROFESSIONNEL
+          <div class="photo-badge">
+            <span class="badge-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg>
             </span>
-
+            <div>
+              <strong>Najibe Benay <span class="verified" aria-hidden="true">✓</span></strong>
+              <small data-i18n="badge.role">Développeur Full Stack</small>
+            </div>
           </div>
+        </div>
 
+      </div>
+    </section>
+
+
+    <!-- =================================
+         ABOUT
+    ================================= -->
+
+    <section class="section section-alt" id="about" aria-labelledby="aboutTitle">
+      <div class="shell">
+
+        <div class="about-grid">
 
           <div>
+            <p class="section-label" data-i18n="about.label">À propos</p>
+            <h2 class="section-title" id="aboutTitle" data-i18n="about.title">Qui suis-je ?</h2>
+          </div>
 
-            <h3>Stagiaire en informatique</h3>
-
-            <h4>
-              Commune de Kelaat M'Gouna
-            </h4>
-
-            <p class="body-copy">
-              Participation aux activités
-              informatiques et numériques
-              de la commune.
+          <div class="about-content">
+            <p class="about-intro" data-i18n="about.intro">
+              Je suis <span>Najibe Benay</span>, développeur Full Stack junior basé à Tanger.
+            </p>
+            <p data-i18n="about.p1">
+              Titulaire du Diplôme de Technicien Spécialisé en Développement Digital,
+              option Web Full Stack (ISTA Tinghir, 2026), je conçois des applications
+              web complètes : interfaces en React, API REST avec Node.js et Express,
+              et bases de données PostgreSQL.
+            </p>
+            <p data-i18n="about.p2">
+              En freelance, j'ai réalisé pendant 2 mois le site vitrine et l'espace
+              d'administration d'AMECO Professionnel. Je cherche aujourd'hui un premier
+              poste ou un stage pour continuer à progresser au sein d'une équipe.
             </p>
 
-            <ul class="experience-tasks">
-
-              <li>
-                Assistance à la gestion
-                des données et documents numériques.
-              </li>
-
-              <li>
-                Utilisation d'outils informatiques
-                dans un environnement administratif.
-              </li>
-
-              <li>
-                Participation aux tâches
-                de soutien informatique.
-              </li>
-
+            <ul class="about-stats">
+              <li><strong>2</strong><span data-i18n="about.stat1">projets Full Stack</span></li>
+              <li><strong data-i18n="about.stat2n">2 mois</strong><span data-i18n="about.stat2">de mission freelance</span></li>
+              <li><strong data-i18n="about.stat3n">2 ans</strong><span data-i18n="about.stat3">de formation en développement</span></li>
             </ul>
-
-            <div class="tag-list">
-
-              <span>Informatique</span>
-              <span>Gestion des données</span>
-              <span>Administration</span>
-
-            </div>
-
           </div>
-
-        </article>
-
-      </div>
-    </section>
-
-
-    <!-- =================================
-         PART 4 - EDUCATION
-    ================================= -->
-
-    <section class="section section-white"
-      id="education"
-      aria-labelledby="educationTitle">
-
-      <div class="container-fluid">
-
-        <div class="section-heading">
-
-          <p class="section-label">
-            05 / FORMATION
-          </p>
-
-          <h2 class="section-title"
-            id="educationTitle">
-            MES <span>DIPLÔMES.</span>
-          </h2>
-
-          <p class="body-copy">
-            Mon parcours académique
-            et les diplômes obtenus.
-          </p>
 
         </div>
-
-
-        <div class="row g-4">
-
-          <div class="col-12 col-md-6">
-
-            <article class="diploma-card">
-
-              <div class="card-top">
-
-                <span class="card-symbol">✦</span>
-
-                <span class="year-pill">2026</span>
-
-              </div>
-
-              <p class="eyebrow">
-                DIPLÔME PROFESSIONNEL
-              </p>
-
-              <h3>
-                Technicien Spécialisé
-                en Développement Digital
-              </h3>
-
-              <p class="body-copy">
-                Option Web Full Stack
-              </p>
-
-              <div class="card-bottom">
-
-                <strong>ISTA Tinghir</strong>
-                <span>Maroc</span>
-
-              </div>
-
-            </article>
-
+        <div class="about-strip">
+          <div class="about-item">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-12a7 7 0 0114 0c0 5.8-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>
+            <div><strong data-i18n="about.city">Tanger, Maroc</strong><small data-i18n="about.open">Ouvert aux opportunités</small></div>
           </div>
-
-
-          <div class="col-12 col-md-6">
-
-            <article class="diploma-card">
-
-              <div class="card-top">
-
-                <span class="card-symbol">✦</span>
-
-                <span class="year-pill">2024</span>
-
-              </div>
-
-              <p class="eyebrow">
-                BACCALAURÉAT
-              </p>
-
-              <h3>
-                Baccalauréat Sciences Physiques
-              </h3>
-
-              <p class="body-copy">
-                Enseignement secondaire
-              </p>
-
-              <div class="card-bottom">
-
-                <strong>Lycée El Woroud</strong>
-                <span>Maroc</span>
-
-              </div>
-
-            </article>
-
+          <div class="about-item">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h12M9 3v2M5 5c0 4 3 7 7 8M13 5c-1 4-4 7-8 8M14 21l4-9 4 9M15.5 18h5"/></svg>
+            <div><strong data-i18n="about.langs">Arabe · Français · Anglais</strong><small data-i18n="about.levels">Maternelle · Intermédiaire · Intermédiaire</small></div>
           </div>
-
+          <div class="about-item">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg>
+            <div><strong data-i18n="about.goal">Mon objectif</strong><small data-i18n="about.goalText">Un premier poste ou stage en développement web full stack.</small></div>
+          </div>
         </div>
 
       </div>
@@ -918,320 +217,443 @@
 
 
     <!-- =================================
-         PART 5 - CERTIFICATIONS
+         SKILLS
     ================================= -->
 
-    <section class="section"
-      id="certifications"
-      aria-labelledby="certificationsTitle">
-
-      <div class="container-fluid">
-
-        <div class="section-heading">
-
-          <p class="section-label">
-            06 / CERTIFICATIONS
-          </p>
-
-          <h2 class="section-title"
-            id="certificationsTitle">
-            MES <span>CERTIFICATIONS.</span>
-          </h2>
-
-          <p class="body-copy">
-            Mes formations complémentaires
-            sur Coursera.
-          </p>
-
-        </div>
-
-
-        <div class="row g-4">
-
-          <!-- PYTHON CERTIFICATE -->
-
-          <div class="col-12 col-lg-6">
-
-            <article class="certificate-card">
-
-              <div class="card-top">
-
-                <span class="skill-index">
-                  01 / CERTIFICAT
-                </span>
-
-                <span class="year-pill">
-                  Coursera
-                </span>
-
-              </div>
-
-              <div class="certificate-logo">
-
-                <img
-                  src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/python/python-original.svg"
-                  alt=""
-                  loading="lazy">
-
-              </div>
-
-              <p class="eyebrow">
-                PROGRAMMATION
-              </p>
-
-              <h3>
-                Create Your First
-                Python Program From UST
-              </h3>
-
-              <p class="body-copy">
-                Projet guidé d'initiation
-                à la programmation Python.
-              </p>
-
-              <div class="certificate-footer">
-
-                <span>OCTOBRE 2026</span>
-
-                <a
-                  class="certificate-link"
-                  href="https://www.coursera.org/verify/KCDNT8OGHFA3"
-                  target="_blank"
-                  rel="noopener noreferrer">
-
-                  Voir le certificat ↗
-
-                </a>
-
-              </div>
-
-            </article>
-
-          </div>
-
-
-          <!-- WORDPRESS CERTIFICATE -->
-
-          <div class="col-12 col-lg-6">
-
-            <article class="certificate-card">
-
-              <div class="card-top">
-
-                <span class="skill-index">
-                  02 / CERTIFICAT
-                </span>
-
-                <span class="year-pill">
-                  Coursera
-                </span>
-
-              </div>
-
-              <div class="certificate-logo">
-
-                <img
-                  src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/wordpress/wordpress-plain.svg"
-                  alt=""
-                  loading="lazy">
-
-              </div>
-
-              <p class="eyebrow">
-                DÉVELOPPEMENT WEB
-              </p>
-
-              <h3>
-                Build a Free Website
-                with WordPress
-              </h3>
-
-              <p class="body-copy">
-                Projet guidé consacré
-                à la création et à la
-                personnalisation d'un site WordPress.
-              </p>
-
-              <div class="certificate-footer">
-
-                <span>OCTOBRE 2026</span>
-
-                <a
-                  class="certificate-link"
-                  href="https://www.coursera.org/verify/UPK6A3X2HVZA"
-                  target="_blank"
-                  rel="noopener noreferrer">
-
-                  Voir le certificat ↗
-
-                </a>
-
-              </div>
-
-            </article>
-
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-
-
-    <!-- =================================
-         PART 5 - CONTACT
-         WHATSAPP + CV
-    ================================= -->
-
-    <section class="section section-white"
-      id="contact"
-      aria-labelledby="contactTitle">
-
-      <div class="container-fluid">
-
-        <div class="row align-items-center g-5">
-
-          <!-- LEFT CONTACT CONTENT -->
-
-          <div class="col-12 col-lg-7">
-
-            <p class="section-label">
-              07 / CONTACT
-            </p>
-
-            <h2
-              class="section-title contact-title"
-              id="contactTitle">
-
-              UN PROJET ?<br>
-              <span>PARLONS-EN.</span>
-
+    <section class="section" id="skills" aria-labelledby="skillsTitle">
+      <div class="shell">
+
+        <div class="section-head">
+          <div>
+            <p class="section-label" data-i18n="skills.label">Mes compétences</p>
+            <h2 class="section-title" id="skillsTitle" data-i18n="skills.title">
+              Des compétences complètes<br>
+              du front-end au back-end.
             </h2>
-
-            <p class="body-copy contact-description">
-              Vous avez une opportunité,
-              une idée de projet ou une proposition
-              de collaboration ?
-
-              N'hésitez pas à me contacter.
-            </p>
-
-            <p class="eyebrow">
-              ENVOYEZ-MOI UN MESSAGE
-            </p>
-
-            <a class="contact-email"
-              href="mailto:najibbenay65@gmail.com">
-
-              najibbenay65@gmail.com ↗
-
-            </a>
-
           </div>
+          <p class="section-intro" data-i18n="skills.intro">
+            Les technologies et outils que j'utilise pour construire
+            des applications web, de l'interface à la base de données.
+          </p>
+        </div>
 
+        <div class="skills-grid">
 
-          <!-- RIGHT CONTACT CARD -->
-
-          <div class="col-12 col-lg-5">
-
-            <div class="contact-card">
-
-              <p class="eyebrow">
-                CONTACT INFORMATION ↗
-              </p>
-
-              <h3>Restons en contact.</h3>
-
-              <p class="body-copy">
-                Disponible pour échanger
-                autour de projets web et
-                d'opportunités professionnelles.
-              </p>
-
-
-              <!-- LOCATION -->
-
-              <div class="contact-detail">
-
-                <small>LOCALISATION</small>
-
-                <strong>Tanger, Maroc</strong>
-
-              </div>
-
-
-              <!-- EMAIL -->
-
-              <div class="contact-detail">
-
-                <small>EMAIL</small>
-
-                <a href="mailto:najibbenay65@gmail.com">
-                  najibbenay65@gmail.com
-                </a>
-
-              </div>
-
-
-              <!-- SOCIAL LINKS -->
-
-              <div class="contact-socials">
-
-                <a
-                  href="https://github.com/najibbenay"
-                  target="_blank"
-                  rel="noopener noreferrer">
-
-                  GitHub <span>↗</span>
-
-                </a>
-
-                <a
-                  href="https://www.linkedin.com/in/najibe-benay-a7a401437/"
-                  target="_blank"
-                  rel="noopener noreferrer">
-
-                  LinkedIn <span>↗</span>
-
-                </a>
-
-              </div>
-
-
-              <!-- WHATSAPP -->
-
-              <a
-                class="whatsapp-button"
-                href="https://wa.me/212602157982?text=Bonjour%2C%20je%20vous%20contacte%20depuis%20votre%20portfolio."
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Contacter Najibe Benay sur WhatsApp">
-
-                Me contacter sur WhatsApp
-
-                <span aria-hidden="true">↗</span>
-
-              </a>
-
-
-              <!-- DOWNLOAD CV -->
-
-              <a
-                class="cv-button"
-                href="assets/docs/CV-Najibe-Benay.pdf"
-                download="CV-Najibe-Benay.pdf"
-                type="application/pdf">
-
-                Télécharger mon CV
-
-                <span aria-hidden="true">↓</span>
-
-              </a>
-
+          <article class="skill-card">
+            <span class="card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+            </span>
+            <h3 data-i18n="sk.front.t">Front-End</h3>
+            <p data-i18n="sk.front.p">Interfaces responsives et modernes.</p>
+            <div class="tech-list">
+              <span><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/html5/html5-original.svg" alt="" loading="lazy">HTML5</span>
+              <span><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/css3/css3-original.svg" alt="" loading="lazy">CSS3</span>
+              <span><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/javascript/javascript-original.svg" alt="" loading="lazy">JavaScript</span>
+              <span><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/react/react-original.svg" alt="" loading="lazy">React</span>
+              <span><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/vitejs/vitejs-original.svg" alt="" loading="lazy">Vite</span>
+              <span><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/tailwindcss/tailwindcss-original.svg" alt="" loading="lazy">Tailwind CSS</span>
+              <span><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/bootstrap/bootstrap-original.svg" alt="" loading="lazy">Bootstrap</span>
+              <span><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/axios/axios-plain.svg" alt="" loading="lazy">Axios</span>
             </div>
+          </article>
 
+          <article class="skill-card">
+            <span class="card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5"/></svg>
+            </span>
+            <h3 data-i18n="sk.back.t">Back-End</h3>
+            <p data-i18n="sk.back.p">API REST, logique métier et sécurité.</p>
+            <div class="tech-list">
+              <span><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/nodejs/nodejs-original.svg" alt="" loading="lazy">Node.js</span>
+              <span><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/express/express-original.svg" alt="" loading="lazy">Express.js</span>
+              <span><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/php/php-original.svg" alt="" loading="lazy">PHP</span>
+              <span><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/laravel/laravel-original.svg" alt="" loading="lazy">Laravel</span>
+              <span><b class="text-logo" aria-hidden="true">API</b>REST API</span>
+              <span><b class="text-logo" aria-hidden="true">JWT</b>JWT</span>
+            </div>
+          </article>
+
+          <article class="skill-card">
+            <span class="card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6v12c0 1.7 3.6 3 8 3s8-1.3 8-3V6M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg>
+            </span>
+            <h3 data-i18n="sk.db.t">Bases de données</h3>
+            <p data-i18n="sk.db.p">Modélisation et gestion des données.</p>
+            <div class="tech-list">
+              <span><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/postgresql/postgresql-original.svg" alt="" loading="lazy">PostgreSQL</span>
+              <span><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/mysql/mysql-original.svg" alt="" loading="lazy">MySQL</span>
+              <span><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/mongodb/mongodb-original.svg" alt="" loading="lazy">MongoDB</span>
+            </div>
+          </article>
+
+          <article class="skill-card">
+            <span class="card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M14.7 6.3a4 4 0 00-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 005.4-5.4l-2.5 2.5-2.5-.5-.5-2.5z"/></svg>
+            </span>
+            <h3 data-i18n="sk.tools.t">Outils</h3>
+            <p data-i18n="sk.tools.p">Versioning, tests d'API et organisation.</p>
+            <div class="tech-list">
+              <span><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/git/git-original.svg" alt="" loading="lazy">Git</span>
+              <span><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/github/github-original.svg" alt="" loading="lazy">GitHub</span>
+              <span><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/docker/docker-original.svg" alt="" loading="lazy">Docker</span>
+              <span><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/postman/postman-original.svg" alt="" loading="lazy">Postman</span>
+              <span><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/jira/jira-original.svg" alt="" loading="lazy">Jira</span>
+              <span><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/figma/figma-original.svg" alt="" loading="lazy">Figma</span>
+              <span><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/vscode/vscode-original.svg" alt="" loading="lazy">VS Code</span>
+            </div>
+          </article>
+
+        </div>
+
+
+
+      </div>
+    </section>
+
+
+    <!-- =================================
+         PROJECTS
+    ================================= -->
+
+    <section class="section section-alt" id="projects" aria-labelledby="projectsTitle">
+      <div class="shell">
+
+        <div class="section-head">
+          <div>
+            <p class="section-label" data-i18n="projects.label">Mes projets</p>
+            <h2 class="section-title" id="projectsTitle" data-i18n="projects.title">
+              Du besoin au code,<br>
+              des projets qui prennent vie.
+            </h2>
+          </div>
+          <a class="btn btn-outline" href="https://github.com/najibbenay" target="_blank" rel="noopener noreferrer" data-i18n="btn.github">
+            Voir mon GitHub <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+
+        <div class="filter-bar">
+          <div class="filters" role="group" aria-label="Filtrer les projets">
+            <button class="filter is-active" type="button" data-filter="all" aria-pressed="true"><span data-i18n="filter.all">Tous</span> <span class="filter-num">2</span></button>
+            <button class="filter" type="button" data-filter="site" aria-pressed="false"><span data-i18n="filter.site">Sites web</span> <span class="filter-num">1</span></button>
+            <button class="filter" type="button" data-filter="app" aria-pressed="false"><span data-i18n="filter.app">Applications</span> <span class="filter-num">1</span></button>
+          </div>
+          <p class="filter-count" id="projectCount" aria-live="polite">2 projets à explorer</p>
+        </div>
+
+        <div class="project-board">
+          <div class="board-head">
+            <strong data-i18n="board.title">Des idées devenues des applications.</strong>
+            <span data-i18n="board.sub">Le défi, la solution et le résultat de chaque projet.</span>
           </div>
 
+          <div class="project-grid">
+
+            <!-- AMECO -->
+            <article class="project-card" data-category="site">
+              <span class="pin" aria-hidden="true"></span>
+              <div class="project-strip">
+                <span>NB / PROJECT</span>
+                <span>01</span>
+              </div>
+              <div class="project-body">
+                <div class="project-gallery" data-gallery>
+                  <button class="gallery-main" type="button" aria-label="Agrandir les captures de AMECO Professionnel">
+                    <img class="project-shot" src="assets/projects/ameco/01-accueil.webp"
+                      alt="Page d'accueil du site AMECO Professionnel" width="1440" height="900" loading="lazy">
+                    <span class="gallery-count" aria-hidden="true">1 / 5</span>
+                    <span class="gallery-zoom" aria-hidden="true">⤢</span>
+                  </button>
+                  <div class="gallery-thumbs" role="group" aria-label="Captures de AMECO Professionnel">
+                    <button class="gallery-thumb is-active" type="button" aria-pressed="true" aria-label="Accueil"
+                      data-src="assets/projects/ameco/01-accueil.webp" data-alt="Page d'accueil du site AMECO Professionnel" data-caption="Accueil">
+                      <img src="assets/projects/ameco/01-accueil.webp" alt="" width="1440" height="900" loading="lazy">
+                    </button>
+                    <button class="gallery-thumb" type="button" aria-pressed="false" aria-label="Catalogue produits"
+                      data-src="assets/projects/ameco/02-catalogue.webp" data-alt="Catalogue AMECO avec filtres par catégorie" data-caption="Catalogue produits">
+                      <img src="assets/projects/ameco/02-catalogue.webp" alt="" width="1440" height="900" loading="lazy">
+                    </button>
+                    <button class="gallery-thumb" type="button" aria-pressed="false" aria-label="Fiche produit"
+                      data-src="assets/projects/ameco/03-fiche-produit.webp" data-alt="Fiche produit AMECO avec ajout au devis et commande WhatsApp" data-caption="Fiche produit">
+                      <img src="assets/projects/ameco/03-fiche-produit.webp" alt="" width="1440" height="900" loading="lazy">
+                    </button>
+                    <button class="gallery-thumb" type="button" aria-pressed="false" aria-label="Dashboard admin"
+                      data-src="assets/projects/ameco/04-dashboard.webp" data-alt="Tableau de bord d'administration AMECO : statistiques des devis" data-caption="Dashboard admin">
+                      <img src="assets/projects/ameco/04-dashboard.webp" alt="" width="1440" height="900" loading="lazy">
+                    </button>
+                    <button class="gallery-thumb" type="button" aria-pressed="false" aria-label="Gestion des devis"
+                      data-src="assets/projects/ameco/05-devis.webp" data-alt="Gestion des demandes de devis dans l'espace admin AMECO" data-caption="Gestion des devis">
+                      <img src="assets/projects/ameco/05-devis.webp" alt="" width="1440" height="900" loading="lazy">
+                    </button>
+                  </div>
+                </div>
+                <p class="project-meta" data-i18n="p1.meta">Hygiène pro · Freelance · Tanger</p>
+                <h3>AMECO Professionnel</h3>
+                <div class="tag-list">
+                  <span>React</span><span>Vite</span><span>Tailwind</span><span>Node.js</span><span>PostgreSQL</span><span>JWT</span>
+                </div>
+                <dl class="project-case">
+                  <dt data-i18n="case.challenge">Le défi</dt>
+                  <dd data-i18n="p1.challenge">Une marque de produits d'hygiène professionnelle sans site web pour présenter son catalogue et recevoir des demandes de devis.</dd>
+                  <dt data-i18n="case.solution">La solution</dt>
+                  <dd data-i18n="p1.solution">Site vitrine multilingue (FR / EN / AR) et espace d'administration sécurisé par JWT : devis, produits, statistiques et export Excel.</dd>
+                  <dt data-i18n="case.result">Le résultat</dt>
+                  <dd data-i18n="p1.result">Site et espace d'administration réalisés en 2 mois, en freelance.</dd>
+                </dl>
+                <div class="project-actions">
+                  <span class="project-status" data-i18n="p1.status">Projet client</span>
+                  <a class="project-link" href="#journey" data-i18n="p1.link">Voir la mission →</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- WHATSAPP ORDER MANAGER -->
+            <article class="project-card" data-category="app">
+              <span class="pin" aria-hidden="true"></span>
+              <div class="project-strip strip-dark">
+                <span>NB / PROJECT</span>
+                <span>02</span>
+              </div>
+              <div class="project-body">
+                <div class="project-gallery" data-gallery>
+                  <button class="gallery-main" type="button" aria-label="Agrandir les captures de WhatsApp Order Manager">
+                    <img class="project-shot" src="assets/projects/order-manager/01-dashboard.webp"
+                      alt="Tableau de bord de WhatsApp Order Manager : commandes et revenus" width="1440" height="900" loading="lazy">
+                    <span class="gallery-count" aria-hidden="true">1 / 5</span>
+                    <span class="gallery-zoom" aria-hidden="true">⤢</span>
+                  </button>
+                  <div class="gallery-thumbs" role="group" aria-label="Captures de WhatsApp Order Manager">
+                    <button class="gallery-thumb is-active" type="button" aria-pressed="true" aria-label="Dashboard"
+                      data-src="assets/projects/order-manager/01-dashboard.webp" data-alt="Tableau de bord de WhatsApp Order Manager : commandes et revenus" data-caption="Dashboard">
+                      <img src="assets/projects/order-manager/01-dashboard.webp" alt="" width="1440" height="900" loading="lazy">
+                    </button>
+                    <button class="gallery-thumb" type="button" aria-pressed="false" aria-label="Analytics"
+                      data-src="assets/projects/order-manager/02-analytics.webp" data-alt="Écran Analytics de WhatsApp Order Manager : revenus livrés et répartition par statut" data-caption="Analytics">
+                      <img src="assets/projects/order-manager/02-analytics.webp" alt="" width="1440" height="900" loading="lazy">
+                    </button>
+                    <button class="gallery-thumb" type="button" aria-pressed="false" aria-label="Produits & stock"
+                      data-src="assets/projects/order-manager/03-produits.webp" data-alt="Gestion des produits et du stock dans WhatsApp Order Manager" data-caption="Produits & stock">
+                      <img src="assets/projects/order-manager/03-produits.webp" alt="" width="1440" height="900" loading="lazy">
+                    </button>
+                    <button class="gallery-thumb" type="button" aria-pressed="false" aria-label="Clients"
+                      data-src="assets/projects/order-manager/04-clients.webp" data-alt="Annuaire clients avec contact WhatsApp dans WhatsApp Order Manager" data-caption="Clients">
+                      <img src="assets/projects/order-manager/04-clients.webp" alt="" width="1440" height="900" loading="lazy">
+                    </button>
+                    <button class="gallery-thumb" type="button" aria-pressed="false" aria-label="Connexion"
+                      data-src="assets/projects/order-manager/05-connexion.webp" data-alt="Page de connexion de WhatsApp Order Manager" data-caption="Connexion">
+                      <img src="assets/projects/order-manager/05-connexion.webp" alt="" width="1440" height="900" loading="lazy">
+                    </button>
+                  </div>
+                </div>
+                <p class="project-meta" data-i18n="p2.meta">E-commerce · Projet personnel</p>
+                <h3>WhatsApp Order Manager</h3>
+                <div class="tag-list">
+                  <span>React</span><span>Node.js</span><span>Express.js</span><span>PostgreSQL</span><span>JWT</span>
+                </div>
+                <dl class="project-case">
+                  <dt data-i18n="case.challenge">Le défi</dt>
+                  <dd data-i18n="p2.challenge">Suivre commandes, stock et clients quand une boutique vend via WhatsApp, sans outil centralisé.</dd>
+                  <dt data-i18n="case.solution">La solution</dt>
+                  <dd data-i18n="p2.solution">Un tableau de bord unique : commandes, stock, clients, suivi des statuts et statistiques de ventes, avec données isolées par boutique.</dd>
+                  <dt data-i18n="case.result">Le résultat</dt>
+                  <dd data-i18n="p2.result">Application fonctionnelle, code disponible sur GitHub.</dd>
+                </dl>
+                <div class="project-actions">
+                  <a class="btn btn-dark" href="https://github.com/najibbenay/whatsapp-order-manager" target="_blank" rel="noopener noreferrer" data-i18n="btn.code">
+                    Voir le code <span aria-hidden="true">↗</span>
+                  </a>
+                </div>
+              </div>
+            </article>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- =================================
+         JOURNEY
+    ================================= -->
+
+    <section class="section" id="journey" aria-labelledby="journeyTitle">
+      <div class="shell">
+
+        <div class="section-head">
+          <div>
+            <p class="section-label" data-i18n="journey.label">Mon parcours</p>
+            <h2 class="section-title" id="journeyTitle" data-i18n="journey.title">
+              Expérience et formation.
+            </h2>
+          </div>
+          <p class="section-intro" data-i18n="journey.intro">
+            Une mission freelance, un stage, un diplôme en
+            développement digital et un baccalauréat.
+          </p>
+        </div>
+
+        <div class="journey-grid">
+
+          <article class="journey-card">
+            <div class="journey-top">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 012-2h4a2 2 0 012 2v2M3 13h18"/></svg>
+              <span>01</span>
+            </div>
+            <h3 data-i18n="j1.title">Développeur Full Stack freelance</h3>
+            <p class="journey-place" data-i18n="j1.place">AMECO Professionnel, Tanger · 2 mois</p>
+            <p data-i18n="j1.text">
+              Échange avec le client pour définir les besoins, puis conception
+              d'un site vitrine et d'un espace d'administration : API REST avec
+              Node.js, Express et PostgreSQL, demande de devis et contact WhatsApp.
+            </p>
+            <strong data-i18n="j1.strong">Du besoin du client au produit final.</strong>
+            <a href="#projects" data-i18n="j1.link">Voir le projet →</a>
+          </article>
+
+          <article class="journey-card">
+            <div class="journey-top">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21h18M5 21V9l7-5 7 5v12M9 21v-6h6v6"/></svg>
+              <span>02</span>
+            </div>
+            <h3 data-i18n="j2.title">Stagiaire en informatique</h3>
+            <p class="journey-place" data-i18n="j2.place">Commune de Kelaat M'Gouna · Avril – Mai 2026</p>
+            <p data-i18n="j2.text">
+              Participation aux activités informatiques et numériques de la
+              commune : gestion des données et documents numériques, outils
+              informatiques et soutien technique.
+            </p>
+            <strong data-i18n="j2.strong">Une première expérience en environnement administratif.</strong>
+          </article>
+
+          <article class="journey-card">
+            <div class="journey-top">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v5c0 1.7 2.7 3 6 3s6-1.3 6-3v-5"/></svg>
+              <span>03</span>
+            </div>
+            <h3 data-i18n="j3.title">Technicien Spécialisé en Développement Digital</h3>
+            <p class="journey-place" data-i18n="j3.place">ISTA Tinghir · 2024 – 2026</p>
+            <p data-i18n="j3.text">
+              Formation de deux ans en développement digital,
+              option Web Full Stack.
+            </p>
+            <strong data-i18n="j3.strong">Diplôme obtenu en 2026.</strong>
+          </article>
+
+          <article class="journey-card">
+            <div class="journey-top">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19.5V5a2 2 0 012-2h13v16H6a2 2 0 00-2 2zM4 19.5A2 2 0 016 21.5h13"/><path d="M9 7h6M9 11h4"/></svg>
+              <span>04</span>
+            </div>
+            <h3 data-i18n="j4.title">Baccalauréat Sciences Physiques</h3>
+            <p class="journey-place" data-i18n="j4.place">Lycée El Worod · 2024</p>
+            <p data-i18n="j4.text">
+              Enseignement secondaire, filière Sciences Physiques.
+            </p>
+            <strong data-i18n="j4.strong">Baccalauréat obtenu en 2024.</strong>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- =================================
+         CERTIFICATIONS
+    ================================= -->
+
+    <section class="section section-alt" id="certifications" aria-labelledby="certificationsTitle">
+      <div class="shell">
+
+        <div class="section-head">
+          <div>
+            <p class="section-label" data-i18n="certs.label">Certifications</p>
+            <h2 class="section-title" id="certificationsTitle" data-i18n="certs.title">
+              Formations complémentaires.
+            </h2>
+          </div>
+          <p class="section-intro" data-i18n="certs.intro">Deux projets guidés réalisés sur Coursera.</p>
+        </div>
+
+        <div class="cert-grid">
+
+          <article class="cert-card">
+            <span class="cert-logo">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/python/python-original.svg" alt="" loading="lazy">
+            </span>
+            <div class="cert-body">
+              <p class="project-meta" data-i18n="c1.meta">Programmation · Octobre 2026</p>
+              <h3>Create Your First Python Program From UST</h3>
+              <p data-i18n="c1.text">Projet guidé d'initiation à la programmation Python.</p>
+            </div>
+            <a class="btn btn-outline" href="https://www.coursera.org/verify/KCDNT8OGHFA3" target="_blank" rel="noopener noreferrer" data-i18n="btn.cert">
+              Voir le certificat <span aria-hidden="true">↗</span>
+            </a>
+          </article>
+
+          <article class="cert-card">
+            <span class="cert-logo">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/wordpress/wordpress-plain.svg" alt="" loading="lazy">
+            </span>
+            <div class="cert-body">
+              <p class="project-meta" data-i18n="c2.meta">Développement web · Octobre 2026</p>
+              <h3>Build a Free Website with WordPress</h3>
+              <p data-i18n="c2.text">Création et personnalisation d'un site WordPress.</p>
+            </div>
+            <a class="btn btn-outline" href="https://www.coursera.org/verify/UPK6A3X2HVZA" target="_blank" rel="noopener noreferrer" data-i18n="btn.cert">
+              Voir le certificat <span aria-hidden="true">↗</span>
+            </a>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- =================================
+         CONTACT
+    ================================= -->
+
+    <section class="contact" id="contact" aria-labelledby="contactTitle">
+      <div class="shell contact-grid">
+
+        <div>
+          <p class="section-label" data-i18n="contact.label">Contact</p>
+          <h2 class="contact-title" id="contactTitle" data-i18n="contact.title">
+            Une opportunité ou un projet ?<br>
+            <span>Parlons-en.</span>
+          </h2>
+          <p class="contact-description" data-i18n="contact.desc">
+            Je suis disponible pour échanger autour d'un stage, d'un poste
+            ou d'un projet web.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-accent"
+              href="https://wa.me/212602157982?text=Bonjour%2C%20je%20vous%20contacte%20depuis%20votre%20portfolio."
+              target="_blank" rel="noopener noreferrer" data-i18n="btn.whatsapp">
+              Me contacter sur WhatsApp <span aria-hidden="true">↗</span>
+            </a>
+            <a class="btn btn-ghost" href="assets/docs/CV-Najibe-Benay.pdf"
+              download="CV-Najibe-Benay.pdf" type="application/pdf" data-i18n="btn.cv">
+              Télécharger mon CV <span aria-hidden="true">↓</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="contact-card">
+          <div class="contact-detail">
+            <small data-i18n="contact.email">Email</small>
+            <a href="mailto:najibbenay65@gmail.com">najibbenay65@gmail.com</a>
+          </div>
+          <div class="contact-detail">
+            <small data-i18n="contact.location">Localisation</small>
+            <strong data-i18n="about.city">Tanger, Maroc</strong>
+          </div>
+          <div class="contact-socials">
+            <a href="https://github.com/najibbenay" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+            <a href="https://www.linkedin.com/in/najibe-benay-a7a401437/" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a>
+          </div>
         </div>
 
       </div>
@@ -1243,25 +665,26 @@
   <!-- ========== FOOTER ========== -->
 
   <footer class="site-footer">
-
-    <div class="container-fluid footer-inner">
-
-      <span>
-        © <span id="currentYear">2026</span>
-        Najibe Benay
-      </span>
-
-      <span>
-        Designed &amp; Developed by Najibe Benay
-      </span>
-
-      <a href="#home">
-        Retour en haut ↑
-      </a>
-
+    <div class="shell footer-inner">
+      <span>© <span id="currentYear">2026</span> Najibe Benay</span>
+      <span>Designed &amp; Developed by Najibe Benay</span>
+      <a href="#home" data-i18n="footer.top">Retour en haut ↑</a>
     </div>
-
   </footer>
+
+  <!-- ========== LIGHTBOX (galerie des projets) ========== -->
+  <dialog class="lightbox" id="lightbox" aria-label="Captures du projet">
+    <button class="lightbox-close" type="button" aria-label="Fermer">×</button>
+    <button class="lightbox-nav lightbox-prev" type="button" aria-label="Capture précédente">‹</button>
+    <figure class="lightbox-figure">
+      <img id="lightboxImage" src="" alt="">
+      <figcaption>
+        <span id="lightboxCaption"></span>
+        <span class="lightbox-index" id="lightboxIndex"></span>
+      </figcaption>
+    </figure>
+    <button class="lightbox-nav lightbox-next" type="button" aria-label="Capture suivante">›</button>
+  </dialog>
 
 </body>
 </html>
